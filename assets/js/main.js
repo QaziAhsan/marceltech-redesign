@@ -602,18 +602,19 @@ var swiper = new Swiper(".clientSwiper", {
   },
   breakpoints: {
     0: {
-      /* when window >=0px - webflow mobile landscape/portriat */
       spaceBetween: 30,
     },
-    480: {
-      /* when window >=0px - webflow mobile landscape/portriat */
-      spaceBetween: 30,
-    },
-    767: {
-      /* when window >= 767px - webflow tablet */ spaceBetween: 40,
+    768: {
+      spaceBetween: 40,
+      slidesPerView: 3
     },
     992: {
-      /* when window >= 988px - webflow desktop */ spaceBetween: 40,
+      spaceBetween: 40,
+      slidesPerView: 4
+    },
+    1300: {
+      spaceBetween: 40,
+      slidesPerView: 8
     },
   },
 });
@@ -624,6 +625,25 @@ var swiper = new Swiper(".industries-swiper", {
   centeredSlides: true,
   loop: true,
   freeMode: true,
+  breakpoints: {
+    0: {
+      spaceBetween: 30,
+      slidesPerView: 1,
+  centeredSlides: false,
+    },
+    500: {
+      spaceBetween: 20,
+      slidesPerView: 2
+    },
+    992: {
+      spaceBetween: 20,
+      slidesPerView: 3
+    },
+    1300: {
+      spaceBetween: 40,
+      slidesPerView: 5
+    },
+  },
 });
 
 var swiper = new Swiper(".team-swiper", {
@@ -632,18 +652,26 @@ var swiper = new Swiper(".team-swiper", {
   centeredSlides: true,
   loop: true,
   freeMode: true,
+  breakpoints: {
+    0: {
+      spaceBetween: 30,
+      slidesPerView: 1,
+  centeredSlides: false,
+    },
+    500: {
+      spaceBetween: 20,
+      slidesPerView: 2
+    },
+    992: {
+      spaceBetween: 20,
+      slidesPerView: 3
+    },
+    1300: {
+      spaceBetween: 40,
+      slidesPerView: 5
+    },
+  },
 });
-
-// var swiper = new Swiper(".testimonialSwiper", {
-//   pagination: {
-//     el: ".swiper-pagination",
-//     clickable: true,
-//     renderBullet: function (index, className) {
-//       return '<span class="' + className + '">' + (index + 1) + "</span>";
-//     },
-//   },
-// });
-
 
 
 var swiper2 = new Swiper(".testimonialImgSwiper", {
