@@ -299,6 +299,30 @@ $(".anim-fadeinup").each(function () {
   );
 });
 
+// Scale in-up
+$(".anim-skewinup").each(function () {
+  let tl_SkewInUp = gsap.timeline({
+    scrollTrigger: {
+      trigger: this,
+      start: "top bottom",
+      markers: false,
+    },
+  });
+
+  tl_SkewInUp.from(
+    this,
+    {
+      duration: 2,
+      scaleX: 1.4,
+      transformOrigin: "left top",
+      autoAlpha: 0,
+      y: 100,
+      ease: Expo.easeOut,
+      clearProps: "all",
+    },
+    "+=0.3"
+  );
+});
 // skew in-up
 $(".anim-skewinup").each(function () {
   let tl_SkewInUp = gsap.timeline({
@@ -399,6 +423,30 @@ $(".anim-stretchinup").each(function () {
   );
 });
 
+// stretch in-up
+$(".img_reveal").each(function () {
+  let tl_StretchInUp = gsap.timeline({
+    scrollTrigger: {
+      trigger: this,
+      start: "top bottom",
+      markers: false,
+    },
+  });
+
+  tl_StretchInUp.from(
+    this,
+    {
+      duration: 2,
+      autoAlpha: 0,
+      y: 100,
+      scaleY: 1,
+      transformOrigin: "top",
+      ease: Expo.easeOut,
+      clearProps: "all",
+    },
+    "+=0.2"
+  );
+});
 // zoom in
 $(".anim-zoomin").each(function () {
   // Add wrap <div>.
@@ -430,6 +478,32 @@ $(".anim-zoomin").each(function () {
   function animZoomInRefresh() {
     ScrollTrigger.refresh();
   }
+});
+
+gsap.registerPlugin(ScrollTrigger);
+
+const tl = gsap.timeline({
+  ease: "none",
+});
+
+tl.from(".industries", {
+  scale: 0.5,
+  duration: 1,
+  transformOrigin: "bottom center",
+}).to(
+  {},
+  {
+    duration: 1,
+  }
+);
+ScrollTrigger.create({
+  trigger: "services",
+  start: "top top",
+  end: "+=200%",
+  pin: true,
+  animation: tl,
+  scrub: 0.78,
+  pinSpacing: false,
 });
 // Page header elements scrolling effects:
 
@@ -606,15 +680,15 @@ var swiper = new Swiper(".clientSwiper", {
     },
     768: {
       spaceBetween: 40,
-      slidesPerView: 3
+      slidesPerView: 3,
     },
     992: {
       spaceBetween: 40,
-      slidesPerView: 4
+      slidesPerView: 4,
     },
     1300: {
       spaceBetween: 40,
-      slidesPerView: 8
+      slidesPerView: 9,
     },
   },
 });
@@ -629,19 +703,19 @@ var swiper = new Swiper(".industries-swiper", {
     0: {
       spaceBetween: 30,
       slidesPerView: 1,
-  centeredSlides: false,
+      centeredSlides: false,
     },
     500: {
       spaceBetween: 20,
-      slidesPerView: 2
+      slidesPerView: 2,
     },
     992: {
       spaceBetween: 20,
-      slidesPerView: 3
+      slidesPerView: 3,
     },
     1300: {
       spaceBetween: 40,
-      slidesPerView: 5
+      slidesPerView: 5,
     },
   },
 });
@@ -656,27 +730,26 @@ var swiper = new Swiper(".team-swiper", {
     0: {
       spaceBetween: 30,
       slidesPerView: 1,
-  centeredSlides: false,
+      centeredSlides: false,
     },
     500: {
       spaceBetween: 20,
-      slidesPerView: 2
+      slidesPerView: 2,
     },
     992: {
       spaceBetween: 20,
-      slidesPerView: 3
+      slidesPerView: 3,
     },
     1300: {
       spaceBetween: 40,
-      slidesPerView: 5
+      slidesPerView: 5,
     },
   },
 });
 
-
 var swiper2 = new Swiper(".testimonialImgSwiper", {
   effect: "fade",
-  allowTouchMove: false
+  allowTouchMove: false,
 });
 var testimonialSwiper = new Swiper(".testimonialSwiper", {
   pagination: {
@@ -688,8 +761,7 @@ var testimonialSwiper = new Swiper(".testimonialSwiper", {
   },
   thumbs: {
     swiper: swiper2,
-  }
- 
+  },
 });
 /*********Swiper Initializations End ***********/
 
@@ -775,3 +847,4 @@ if (!isMobile) {
     });
   });
 }
+
