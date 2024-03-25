@@ -262,10 +262,11 @@ body.tt-transition .ptr-prel-content {
   color: white;
   border: 1px solid #f45d2c;
   border-radius: 50px;
-  padding: 8px 20px;
+  padding: 10px 20px;
   transition: 0.2s ease;
   display: inline-block;
   text-transform: uppercase;
+  font-weight: 600;
 }
 .btn-main:hover {
   background: #f45d2c;
@@ -328,8 +329,6 @@ body.tt-transition .ptr-prel-content {
 }
 
 .btn-with-arrow .arrow-btn img {
-  width: 16px;
-  height: 16px;
   display: flex;
   color: inherit;
   overflow: visible;
@@ -359,7 +358,36 @@ body.tt-transition .ptr-prel-content {
   transition: transform 0.3s ease 0.2s, opacity 0.3s ease 0.2s;
 }
 
-.arrow-btn {
+.arrow-round {
+  border: none;
+  display: inline-flex;
+  gap: 10px;
+}
+.arrow-round:hover{
+  background: transparent;
+  color: inherit;
+}
+.arrow-round .arrow-btn{
+  width: 12px;
+  height: 12px;
+  overflow: hidden;
+}
+.arrow-round .arrow-btn img{
+  width: 100%;
+  height: 100%;
+}
+.arrow-btn-wrapper{
+  width: 40px;
+  height: 40px;
+  border:1px solid #F55D2D;
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.arrow-round:hover .arrow-btn-wrapper{
+  background: #F55D2D;
 }
 /**********Custom Cursor**********/
 
@@ -418,7 +446,8 @@ body.tt-transition .ptr-prel-content {
 /**********Header Navbar**********/
 
 .navbar {
-  position: absolute;
+  transition: .2s ease;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -427,10 +456,27 @@ body.tt-transition .ptr-prel-content {
   cursor: auto;
   padding: 15px;
 }
+.logo-light{}
+.logo-dark{display: none;}
+.navbar.sticky .logo-dark{display: block;}
+.navbar.sticky .logo-light{display: none;}
+.navbar.sticky{
+  background: white;
+}
+
 .navbar a.nav-link {
   color: white;
 }
-
+.navbar.sticky a.nav-link{
+  color: black;
+}
+.navbar.sticky a.nav-link:hover{
+  color: inherit;
+}
+.navbar.sticky .btn-main{
+  background: #f45d2c;
+  color: white;
+}
 .header-logo-wrapper {
   display: block;
   height: 20px;
@@ -544,6 +590,7 @@ nav.header-menu li a {
 /**********Hero**********/
 
 .hero {
+  background: url("../img/wave-3.jpg");
   position: sticky;
   top: 0;
   height: 90vh;
@@ -553,10 +600,7 @@ nav.header-menu li a {
   overflow: hidden;
   padding-bottom: 100px;
 }
-.show-reel a:hover .mt-play-icon::before {
-  position: sticky;
-  top: 0;
-}
+
 
 .hero-row {
   align-items: flex-end;
@@ -669,7 +713,7 @@ nav.header-menu li a {
 }
 /**********Hero End**********/
 .clients {
-  padding: 50px 0;
+  padding: 35px 0;
 }
 .client_logo img {
   width: 100%;
@@ -726,13 +770,13 @@ nav.header-menu li a {
 .service-accordion .card-body a {
   color: red;
   font-weight: bold;
-  display: block;
   margin-top: 20px;
+  font-size: 16px;
 }
 
 .industries {
   background: #181818;
-  padding: 80px 0 100px;
+  padding: 100px 0 100px;
   border-radius: 24px;
 }
 
@@ -827,7 +871,35 @@ a.wcu-card-header {
   font-weight: 600;
   margin-bottom: 40px;
 }
-
+.wcu-card-arrows {
+  overflow: hidden;
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+.wcu-card-arrows img{
+  transition: .3s ease;
+}
+.wcu-card-arrows img:first-child{
+  transition: transform 0.3s ease 0.2s, opacity 0.3s ease 0.2s;
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.wcu-card-arrows img:last-child {
+  opacity: 0;
+  transform: translate(0, -100%);
+  transition: transform 0.3s, opacity 0.3s;
+}
+a.wcu-card-header:hover .wcu-card-arrows img:first-child{
+  opacity: 0;
+  transform: translate(100%, -100%);
+  transition: transform 0.3s, opacity 0.3s;
+}
+a.wcu-card-header:hover .wcu-card-arrows img:last-child{
+  opacity: 1;
+  transform: translate(0, -100%);
+  transition: transform 0.3s ease 0.2s, opacity 0.3s ease 0.2s;
+}
 .our-team {
   padding-bottom: 100px;
   overflow: hidden;
@@ -1218,7 +1290,7 @@ figure.testimonial-img {
 }
 .our-approach {
   background: #181818;
-  padding: 50px 0;
+  padding: 80px 0 50px;
   border-radius: 24px;
 }
 .approach-header {
@@ -1331,7 +1403,7 @@ figure.approach-img {
 }
 
 .start-growing {
-  padding: 50px 0 0;
+  padding: 80px 0 0;
   background: #181818;
   border-radius: 24px;
   color: white;
@@ -1391,8 +1463,9 @@ figure.approach-img {
   color: #f45d2c;
 }
 .form-row-button {
-  margin-top: 10px;
+  margin-top: 15px;
   justify-content: space-between;
+  align-items: center;
 }
 .form-check-group {
   width: 60%;
@@ -1428,9 +1501,9 @@ ul.footer-links li a {
   display: inline-block;
 }
 .footer-arrow-link {
-  position: absolute;
+  /* position: absolute;
   top: 20px;
-  right: 40px;
+  right: 40px; */
   width: 70px;
   height: 70px;
   background: #f45d2c;
@@ -1439,6 +1512,7 @@ ul.footer-links li a {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  transform: translate(350px, -180px);
 }
 .go-to-top {
   display: flex;
@@ -1446,6 +1520,7 @@ ul.footer-links li a {
   gap: 10px;
   font-weight: bold;
   text-transform: uppercase;
+  cursor: pointer;
 }
 .go-to-top .goToTopArrow{
   border: 1px solid #f45d2c;
@@ -1457,6 +1532,9 @@ ul.footer-links li a {
   justify-content: center;
   font-size: 18px;
   transition: 0.3s ease;
+}
+.go-to-top:hover .goToTopArrow{
+  background: #f45d2c;
 }
 .go-to-top .goToTopArrow img{
   width: 11px;
@@ -1502,30 +1580,6 @@ ul.footer-links li a {
 ul.privacy-links {
   display: flex;
   gap: 20px;
-}
-.footer-reel a {
-  display: flex;
-  position: relative;
-  align-items: center;
-  gap: 10px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-.footer-arrow-link-invert {
-  border: 1px solid #f45d2c;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s ease;
-}
-.footer-reel a:hover .footer-arrow-link-invert {
-  background: #f45d2c;
-}
-.footer-arrow-link-invert img {
-  width: 14px;
 }
 @media (max-width: 1500px) {
   .btn-wrapper.hero-btn a {
@@ -1736,6 +1790,16 @@ ul.privacy-links {
 }
 .footer-reel a {
   justify-content: center;
+}
+.btn-main{
+  font-size: 16px;
+}
+.btn-with-arrow .arrow-btn {
+  width: 14px;
+  height: 14px;
+}
+.our-work {
+  padding: 60px 0;
 }
 }
 @media (max-width: 500px) {

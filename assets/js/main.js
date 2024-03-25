@@ -1,6 +1,16 @@
+var header = $('.navbar');
+
+$(window).on('scroll', function() {
+  if ($(window).scrollTop() > 100) { // Change 100 to your desired scroll position
+    header.addClass('sticky');
+  } else {
+    header.removeClass('sticky');
+  }
+});
+
 // Back To Top
 
-var btn = $("#back-to-top");
+var btn = $(".go-to-top");
 
 $(window).scroll(function () {
   if ($(window).scrollTop() > 300) {
@@ -65,6 +75,83 @@ if ($("body").hasClass("tt-transition")) {
     tl_transitIn.to("#tt-header", { y: -20, autoAlpha: 0 }, 0);
     tl_transitIn.to(".ptr-preloader", { autoAlpha: 1 }, 0.4);
   }
+
+// Check if it's a touch device
+const isTouchDevice = 'ontouchstart' in window;
+const createCursorFollower = () => {
+  const $el = document.querySelector('.hero-btn a');
+  const container = document.querySelector(".hero-btn"); // Use document.querySelector instead of $ for plain JavaScript
+  container.addEventListener('mousemove', (e) => {
+    const { target, offsetX: x, offsetY: y } = e; // Use offsetX and offsetY for mouse position relative to the container
+    gsap.to($el, {
+      x: x - 120,
+      y: y -120,
+      scale:.8,
+      duration: .1,
+    });
+  });
+  // Hiding the cursor element when the mouse cursor
+  // is moved out of the page
+  container.addEventListener('mouseleave', (e) => {
+    gsap.to($el, {
+      x: 0,
+      y: 0,
+      scale:1,
+      duration: .1
+    });
+  });
+};
+const getInTouch = () => {
+  // const $el = document.querySelector('.get-in-touch-link .footer-arrow-link');
+  // const container = document.querySelector(".get-in-touch-link"); // Use document.querySelector instead of $ for plain JavaScript
+  // container.addEventListener('mousemove', (e) => {
+  //   const { target, offsetX: x, offsetY: y } = e; // Use offsetX and offsetY for mouse position relative to the container
+  //   gsap.to($el, {
+  //     x: x,
+  //     y: y - 200,
+  //     duration:1,
+  //   });
+  // });
+
+  $('.get-in-touch-link').on("mouseenter", function () {
+    $ball.append('<div class="ball-view"><img src="assets/img/arrow-white.png" alt="" /></div>');
+    $(".ball-view").append($(this).attr("data-cursor"));
+    gsap.to(ball, {
+      duration: 0.3,
+      yPercent: -75,
+      width: 65,
+      height: 65,
+      opacity: 1,
+      borderWidth: 0,
+      backgroundColor: "#F45D2C",
+    });
+    gsap.to(".ball-view", { duration: 0.3, scale: 1, autoAlpha: 1 });
+  })
+  $('.get-in-touch-link').on("mouseleave", function () {
+    gsap.to(ball, {
+      duration: 0.3,
+      yPercent: -50,
+      width: $ballWidth,
+      height: $ballHeight,
+      opacity: $ballOpacity,
+      borderWidth: $ballBorderWidth,
+      backgroundColor: "transparent",
+    });
+    gsap.to(".ball-view", {
+      duration: 0.3,
+      scale: 0,
+      autoAlpha: 0,
+      clearProps: "all",
+    });
+    $ball.find(".ball-view").remove();
+  });
+};
+
+// Only invoke the function if isn't a touch device
+if (!isTouchDevice) {
+  createCursorFollower();
+  getInTouch()
+}
 
   // Transitions Out (when "ptr-overlay" slides out)
   // ================
@@ -274,6 +361,26 @@ if ($("body").hasClass("tt-transition")) {
     });
 }
 
+$(".industries").each(function () {
+  let tl_StretchInUp = gsap.timeline({
+    scrollTrigger: {
+      trigger: this,
+      start: "top bottom",
+      markers: false,
+    },
+  });
+
+  tl_StretchInUp.from(
+    this,
+    {
+      duration: 1,
+      autoAlpha: 0,
+      y: 100,
+      scale: 1.1,
+      clearProps: "all",
+    }
+  );
+});
 /**********Scroll-Animations************/
 
 // fade in-up
@@ -482,28 +589,54 @@ $(".anim-zoomin").each(function () {
 
 gsap.registerPlugin(ScrollTrigger);
 
-const tl = gsap.timeline({
+const tlHero = gsap.timeline({
   ease: "none",
 });
 
-tl.from(".industries", {
-  scale: 0.5,
-  duration: 1,
-  transformOrigin: "bottom center",
-}).to(
-  {},
-  {
-    duration: 1,
-  }
-);
+tlHero.to(".hero-row", {scale: 0.9,opacity: 0.5,duration: 1});
+tlHero.from(".hero-row", {scale: 1,opacity: 1,duration: 1,transformOrigin: "top center",});
 ScrollTrigger.create({
-  trigger: "services",
+  trigger: ".hero",
   start: "top top",
   end: "+=200%",
   pin: true,
-  animation: tl,
+  animation: tlHero,
   scrub: 0.78,
   pinSpacing: false,
+});
+const tlHeroVideo = gsap.timeline({
+  ease: "none",
+});
+tlHeroVideo.to(".hero-bg", {opacity: 0.2,duration: 1,});
+tlHeroVideo.from(".hero-bg", {opacity: 1,duration: 1});
+ScrollTrigger.create({
+  trigger: ".hero-bg",
+  start: "top top",
+  end: "+=200%",
+  pin: true,
+  animation: tlHeroVideo,
+  scrub: 0.78,
+  pinSpacing: false,
+});
+
+
+
+// const tlScrollSection = gsap.timeline({
+//   ease: "none",
+// });
+// tlScrollSection.from(".industries", {scale: 1,opacity: 1,duration: 1});
+// tlScrollSection.to(".industries", {scale: 1,opacity: 0.5,duration: 1});
+// ScrollTrigger.create({
+//   trigger: ".industries",
+//   start: "top center",
+//   pin: true,
+//   animation: tlScrollSection,
+//   scrub: 0.78,
+//   pinSpacing: false,
+// });
+
+const tlReveal = gsap.timeline({
+  ease: "none",
 });
 // Page header elements scrolling effects:
 
@@ -517,7 +650,7 @@ let tlPhParallax = gsap.timeline({
   },
 });
 
-tlPhParallax.to(".ph-image-inner", { yPercent: 30, scale: 1.05 }, 0);
+tlPhParallax.to(".ph-image-inner", { yPercent: 30, scale: 0.8 }, 0);
 tlPhParallax.to(".showcase-img", { yPercent: -30, scale: 1 }, 0);
 
 let tlTextSlide = gsap.timeline({
@@ -676,6 +809,7 @@ var swiper = new Swiper(".clientSwiper", {
   },
   breakpoints: {
     0: {
+      slidesPerView: 2,
       spaceBetween: 30,
     },
     768: {
@@ -847,4 +981,3 @@ if (!isMobile) {
     });
   });
 }
-
