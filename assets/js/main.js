@@ -849,6 +849,10 @@ var swiper = new Swiper(".industries-swiper", {
     },
     1300: {
       spaceBetween: 40,
+      slidesPerView: 4,
+    },
+    1500: {
+      spaceBetween: 40,
       slidesPerView: 5,
     },
   },

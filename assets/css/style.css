@@ -309,6 +309,7 @@ body.tt-transition .ptr-prel-content {
   justify-content: center;
   font-size: 18px;
   color: white;
+  padding: 10px 35px;
 }
 
 .btn-with-arrow:hover .text-btn span:first-child {
@@ -362,6 +363,7 @@ body.tt-transition .ptr-prel-content {
   border: none;
   display: inline-flex;
   gap: 10px;
+  padding: 0;
 }
 .arrow-round:hover{
   background: transparent;
@@ -821,7 +823,7 @@ nav.header-menu li a {
   object-fit: cover;
   transition: transform 2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.industries-card:hover img {
+.industries-card:hover .ind-card-header img {
   transform: scale(1.2);
 }
 .industries-card:hover h3 {
@@ -834,9 +836,8 @@ nav.header-menu li a {
   font-size: 14px;
 }
 .ind-card-body a {
-  display: block;
   color: black;
-  margin-top: 15px;
+  margin-top: 20px;
 }
 
 .whyChooseUs {
@@ -846,10 +847,11 @@ nav.header-menu li a {
   align-items: center;
 }
 .wcu-left h2 {
-  font-size: clamp(30px, 6vw, 80px);
+  font-size: clamp(30px, 6vw, 75px);
   text-transform: uppercase;
   margin-bottom: 15px;
   font-weight: bold;
+  letter-spacing: -5.46px;
 }
 .wcu-card {
   padding: 15px 0;
@@ -857,7 +859,7 @@ nav.header-menu li a {
   position: relative;
 }
 .wcu-card p {
-  font-size: 12px;
+  font-size: 16px;
 }
 .wcu-card h3 {
   font-size: clamp(30px, 6vw, 60px);
@@ -926,7 +928,6 @@ a.wcu-card-header:hover .wcu-card-arrows img:last-child{
   font-size: clamp(50px, 12vw, 200px);
   color: #cbcbcb;
   font-weight: bold;
-  text-transform: uppercase;
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
