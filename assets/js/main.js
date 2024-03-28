@@ -113,38 +113,38 @@ const getInTouch = () => {
   //   });
   // });
 
-  $('.get-in-touch-link').on("mouseenter", function () {
-    $ball.append('<div class="ball-view"><img src="assets/img/arrow-white.png" alt="" /></div>');
-    $(".ball-view").append($(this).attr("data-cursor"));
-    gsap.to(ball, {
-      duration: 0.3,
-      yPercent: -75,
-      width: 65,
-      height: 65,
-      opacity: 1,
-      borderWidth: 0,
-      backgroundColor: "#F45D2C",
-    });
-    gsap.to(".ball-view", { duration: 0.3, scale: 1, autoAlpha: 1 });
-  })
-  $('.get-in-touch-link').on("mouseleave", function () {
-    gsap.to(ball, {
-      duration: 0.3,
-      yPercent: -50,
-      width: $ballWidth,
-      height: $ballHeight,
-      opacity: $ballOpacity,
-      borderWidth: $ballBorderWidth,
-      backgroundColor: "transparent",
-    });
-    gsap.to(".ball-view", {
-      duration: 0.3,
-      scale: 0,
-      autoAlpha: 0,
-      clearProps: "all",
-    });
-    $ball.find(".ball-view").remove();
-  });
+  // $('.get-in-touch-link').on("mouseenter", function () {
+  //   $ball.append('<div class="ball-view"><img src="assets/img/arrow-white.png" alt="" /></div>');
+  //   $(".ball-view").append($(this).attr("data-cursor"));
+  //   gsap.to(ball, {
+  //     duration: 0.3,
+  //     yPercent: -75,
+  //     width: 65,
+  //     height: 65,
+  //     opacity: 1,
+  //     borderWidth: 0,
+  //     backgroundColor: "#F45D2C",
+  //   });
+  //   gsap.to(".ball-view", { duration: 0.3, scale: 1, autoAlpha: 1 });
+  // })
+  // $('.get-in-touch-link').on("mouseleave", function () {
+  //   gsap.to(ball, {
+  //     duration: 0.3,
+  //     yPercent: -50,
+  //     width: $ballWidth,
+  //     height: $ballHeight,
+  //     opacity: $ballOpacity,
+  //     borderWidth: $ballBorderWidth,
+  //     backgroundColor: "transparent",
+  //   });
+  //   gsap.to(".ball-view", {
+  //     duration: 0.3,
+  //     scale: 0,
+  //     autoAlpha: 0,
+  //     clearProps: "all",
+  //   });
+  //   $ball.find(".ball-view").remove();
+  // });
 };
 
 // Only invoke the function if isn't a touch device
