@@ -544,6 +544,40 @@ nav.header-menu li a {
   }
 }
 
+/**********Modal**********/
+
+.modal-content {
+  background-color: transparent;
+  height: 80%;
+}
+.modal-dialog {
+  max-width: 1500px;
+  margin: 1.75rem auto;
+}
+.modal.show .modal-dialog {
+  height: 100%;
+  margin: 0 auto;
+}
+
+.modal-body {
+  padding: 0;
+}
+.modal-backdrop.show {
+  opacity: .9;
+}
+button.close {
+  position: absolute;
+  right: -40px;
+  top: -30px;
+  font-size: 80px;
+  color: white;
+  z-index: 2;
+  opacity: 1;
+  font-weight: 100;
+}
+button.close:hover {
+  color: white;
+}
 /**********Custom Cursor**********/
 
 .cursorNew {
@@ -648,7 +682,7 @@ nav.header-menu li a {
   text-transform: uppercase;
   color: white;
 }
-.show-reel a {
+.show-reel {
   font-family: "IBM Plex Mono", monospace;
   font-weight: 600;
   text-transform: uppercase;
@@ -656,6 +690,7 @@ nav.header-menu li a {
   align-items: center;
   gap: 10px;
   color: white;
+  cursor: pointer;
 }
 .mt-play-icon {
   width: 40px;
@@ -670,7 +705,7 @@ nav.header-menu li a {
   transition: 0.2s ease;
 }
 
-.show-reel a:hover .mt-play-icon {
+.show-reel:hover .mt-play-icon {
   background: white;
   transform: scale(1.2);
 }
@@ -1700,6 +1735,10 @@ ul.privacy-links {
   .industries-header .row {
     padding: 0 15px 30px;
   }
+  button.close {
+    right: 0;
+    top: -70px;
+}
 }
 @media (max-width: 1500px) {
   .btn-wrapper.hero-btn a {
