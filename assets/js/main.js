@@ -361,7 +361,7 @@ if (!isTouchDevice) {
     });
 }
 
-$(".industries").each(function () {
+$(".industriess").each(function () {
   let tl_StretchInUp = gsap.timeline({
     scrollTrigger: {
       trigger: this,
@@ -596,7 +596,7 @@ const tlHero = gsap.timeline({
 tlHero.to(".hero-row", {scale: 0.9,opacity: 0.5,duration: 1});
 tlHero.from(".hero-row", {scale: 1,opacity: 1,duration: 1,transformOrigin: "top center",});
 ScrollTrigger.create({
-  trigger: ".hero",
+  trigger: ".heros",
   start: "top top",
   end: "+=200%",
   pin: true,
@@ -809,7 +809,7 @@ var swiper = new Swiper(".clientSwiper", {
   },
   breakpoints: {
     0: {
-      slidesPerView: 2,
+      slidesPerView: 3,
       spaceBetween: 30,
     },
     768: {
