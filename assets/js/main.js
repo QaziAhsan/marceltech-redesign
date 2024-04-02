@@ -804,7 +804,7 @@ var swiper = new Swiper(".clientSwiper", {
   loop: true,
   slidesPerView: 8,
   autoplay: {
-    delay: 0.5,
+    delay: 1,
     disableOnInteraction: false,
   },
   breakpoints: {

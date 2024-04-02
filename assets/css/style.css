@@ -785,10 +785,18 @@ button.close:hover {
   padding: 35px 0;
   border-bottom: 1px solid #b1b1b1;
 }
+.client_logo {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+}
 .client_logo img {
+  height: 100%;
   width: 100%;
 }
-
+.swiper-wrapper{
+  transition-timing-function: linear !important;
+}
 .services {
   padding: 100px 0;
 }
