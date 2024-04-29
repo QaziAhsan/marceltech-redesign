@@ -78,79 +78,10 @@ if ($("body").hasClass("tt-transition")) {
 
 // Check if it's a touch device
 const isTouchDevice = 'ontouchstart' in window;
-const createCursorFollower = () => {
-  const $el = document.querySelector('.hero-btn a');
-  const container = document.querySelector(".hero-btn"); // Use document.querySelector instead of $ for plain JavaScript
-  container.addEventListener('mousemove', (e) => {
-    const { target, offsetX: x, offsetY: y } = e; // Use offsetX and offsetY for mouse position relative to the container
-    gsap.to($el, {
-      x: x - 120,
-      y: y -120,
-      scale:.8,
-      duration: .1,
-    });
-  });
-  // Hiding the cursor element when the mouse cursor
-  // is moved out of the page
-  container.addEventListener('mouseleave', (e) => {
-    gsap.to($el, {
-      x: 0,
-      y: 0,
-      scale:1,
-      duration: .1
-    });
-  });
-};
-const getInTouch = () => {
-  // const $el = document.querySelector('.get-in-touch-link .footer-arrow-link');
-  // const container = document.querySelector(".get-in-touch-link"); // Use document.querySelector instead of $ for plain JavaScript
-  // container.addEventListener('mousemove', (e) => {
-  //   const { target, offsetX: x, offsetY: y } = e; // Use offsetX and offsetY for mouse position relative to the container
-  //   gsap.to($el, {
-  //     x: x,
-  //     y: y - 200,
-  //     duration:1,
-  //   });
-  // });
-
-  // $('.get-in-touch-link').on("mouseenter", function () {
-  //   $ball.append('<div class="ball-view"><img src="assets/img/arrow-white.png" alt="" /></div>');
-  //   $(".ball-view").append($(this).attr("data-cursor"));
-  //   gsap.to(ball, {
-  //     duration: 0.3,
-  //     yPercent: -75,
-  //     width: 65,
-  //     height: 65,
-  //     opacity: 1,
-  //     borderWidth: 0,
-  //     backgroundColor: "#F45D2C",
-  //   });
-  //   gsap.to(".ball-view", { duration: 0.3, scale: 1, autoAlpha: 1 });
-  // })
-  // $('.get-in-touch-link').on("mouseleave", function () {
-  //   gsap.to(ball, {
-  //     duration: 0.3,
-  //     yPercent: -50,
-  //     width: $ballWidth,
-  //     height: $ballHeight,
-  //     opacity: $ballOpacity,
-  //     borderWidth: $ballBorderWidth,
-  //     backgroundColor: "transparent",
-  //   });
-  //   gsap.to(".ball-view", {
-  //     duration: 0.3,
-  //     scale: 0,
-  //     autoAlpha: 0,
-  //     clearProps: "all",
-  //   });
-  //   $ball.find(".ball-view").remove();
-  // });
-};
 
 // Only invoke the function if isn't a touch device
 if (!isTouchDevice) {
-  createCursorFollower();
-  getInTouch()
+  
 }
 
   // Transitions Out (when "ptr-overlay" slides out)
@@ -587,37 +518,6 @@ $(".anim-zoomin").each(function () {
   }
 });
 
-gsap.registerPlugin(ScrollTrigger);
-
-const tlHero = gsap.timeline({
-  ease: "none",
-});
-
-tlHero.to(".hero-row", {scale: 0.9,opacity: 0.5,duration: 1});
-tlHero.from(".hero-row", {scale: 1,opacity: 1,duration: 1,transformOrigin: "top center",});
-ScrollTrigger.create({
-  trigger: ".heros",
-  start: "top top",
-  end: "+=200%",
-  pin: true,
-  animation: tlHero,
-  scrub: 0.78,
-  pinSpacing: false,
-});
-const tlHeroVideo = gsap.timeline({
-  ease: "none",
-});
-tlHeroVideo.to(".hero-bg", {opacity: 0.2,duration: 1,});
-tlHeroVideo.from(".hero-bg", {opacity: 1,duration: 1});
-ScrollTrigger.create({
-  trigger: ".hero-bg",
-  start: "top top",
-  end: "+=200%",
-  pin: true,
-  animation: tlHeroVideo,
-  scrub: 0.78,
-  pinSpacing: false,
-});
 
 
 
@@ -858,6 +758,29 @@ var swiper = new Swiper(".industries-swiper", {
   },
 });
 
+var swiper = new Swiper(".our-work-swiper", {
+  spaceBetween: 30,
+  centeredSlides: true,
+  loop: true,
+  freeMode: true,
+  breakpoints: {
+    500: {
+      spaceBetween: 20,
+      slidesPerView: 1,
+      centeredSlides: false,
+    },
+    992: {
+      spaceBetween: 20,
+      slidesPerView: 2,
+      centeredSlides: false,
+    },
+    1300: {
+      spaceBetween: 40,
+      slidesPerView: 3,
+    }
+  },
+});
+
 var swiper = new Swiper(".team-swiper", {
   slidesPerView: 5,
   spaceBetween: 15,
@@ -901,6 +824,7 @@ var testimonialSwiper = new Swiper(".testimonialSwiper", {
     swiper: swiper2,
   },
 });
+
 /*********Swiper Initializations End ***********/
 
 $(".card-header").click(function (e) {

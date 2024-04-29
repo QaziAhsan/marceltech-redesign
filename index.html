@@ -86,19 +86,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav">
                 <li class="nav-item active">
-                  <a class="nav-link" href="#">Home</a>
+                  <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">About</a>
+                  <a class="nav-link" href="about.html">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Work</a>
+                  <a class="nav-link" href="work.html">Work</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Services</a>
+                  <a class="nav-link" href="services.html">Services</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Contact Us</a>
+                  <a class="nav-link" href="contact.html">Contact Us</a>
                 </li>
               </ul>
             </div>
@@ -111,7 +111,7 @@
           </div>
         </nav>
 
-        <div>
+        <div class="main-content">
           <section class="hero">
             <video class="hero-bg" autoplay muted loop>
               <source src="assets/img/video-banner.mp4" type="video/mp4" />
@@ -540,7 +540,7 @@
                       </p>
                     </div>
                     <div class="col-lg-2 pr-0" style="text-align: right">
-                      <a href="#" class="btn-main btn-with-arrow invert">
+                      <a href="industries.html" class="btn-main btn-with-arrow invert">
                         <span class="text-btn">
                           <span>View All</span>
                           <span>View All</span>
@@ -2309,11 +2309,10 @@
               <div class="row">
                 <div class="col-lg-2">
                   <ul class="footer-links">
-                    <li><a href="">About</a></li>
-                    <li><a href="">Work</a></li>
-                    <li><a href="">Services</a></li>
-                    <li><a href="">Contact Us</a></li>
-                    <li><a href="">Chat</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
                   </ul>
                 </div>
                 <div class="col-lg-4">
@@ -2455,34 +2454,20 @@
   <script src="assets/js/TweenMax.min.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-  <!-- <script src="assets/js/test.js"></script> -->
   <script src="assets/js/main.js"></script>
   <script>
-    // Inspired by:
-    // https://codepen.io/sgorneau/pen/mWEddP
-    // as described in the above codepen, if we set the value `x` to something like -100% it'll go too fast
-    // so I took the function to calculate the rate and applied to my code
 
     let marquee = document.querySelectorAll(".clipped-text");
 
-    // added event listener because it doesn't get the right width
     addEventListener("load", function () {
       marquee.forEach((el) => {
-        // set a default rate, the higher the value, the faster it is
         let rate = 200;
-        // get the width of the element
         let distance = el.clientWidth;
-        // get the margin-right of the element
         let style = window.getComputedStyle(el);
         let marginRight = parseInt(style.marginRight) || 0;
-        // get the total width of the element
         let totalDistance = distance + marginRight;
-        // get the duration of the animation
-        // for a better explanation, see the quoted codepen in the first comment
         let time = totalDistance / rate;
-        // get the parent of the element
         let container = el.parentElement;
-
         gsap.to(container, time, {
           repeat: -1,
           x: "-" + totalDistance,
@@ -2490,5 +2475,65 @@
         });
       });
     });
+  </script>
+  <script>
+    
+gsap.registerPlugin(ScrollTrigger);
+
+const tlHero = gsap.timeline({
+  ease: "none",
+});
+
+tlHero.to(".hero-row", {scale: 0.9,opacity: 0.5,duration: 1});
+tlHero.from(".hero-row", {scale: 1,opacity: 1,duration: 1,transformOrigin: "top center",});
+ScrollTrigger.create({
+  trigger: ".heros",
+  start: "top top",
+  end: "+=200%",
+  pin: true,
+  animation: tlHero,
+  scrub: 0.78,
+  pinSpacing: false,
+});
+const tlHeroVideo = gsap.timeline({
+  ease: "none",
+});
+tlHeroVideo.to(".hero-bg", {opacity: 0.5,duration: 1,});
+tlHeroVideo.from(".hero-bg", {opacity: 1,duration: 1});
+ScrollTrigger.create({
+  trigger: ".hero-bg",
+  start: "top top",
+  end: "+=200%",
+  pin: true,
+  animation: tlHeroVideo,
+  scrub: 0.78,
+  pinSpacing: false,
+});
+
+const createCursorFollower = () => {
+  const $el = document.querySelector('.hero-btn a');
+  const container = document.querySelector(".hero-btn"); // Use document.querySelector instead of $ for plain JavaScript
+  container.addEventListener('mousemove', (e) => {
+    const { target, offsetX: x, offsetY: y } = e; // Use offsetX and offsetY for mouse position relative to the container
+    gsap.to($el, {
+      x: x - 120,
+      y: y -120,
+      scale:.8,
+      duration: .1,
+    });
+  });
+  // Hiding the cursor element when the mouse cursor
+  // is moved out of the page
+  container.addEventListener('mouseleave', (e) => {
+    gsap.to($el, {
+      x: 0,
+      y: 0,
+      scale:1,
+      duration: .1
+    });
+  });
+};
+
+createCursorFollower();
   </script>
 </html>

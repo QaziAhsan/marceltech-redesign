@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marceltech</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/mc-icon.svg" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- <link rel="stylesheet" href="assets/css/test.css" /> -->
+  </head>
+
+  <body class="tt-transition tt-magic-cursor">
+    <div id="magic-cursor">
+      <div id="ball"></div>
+    </div>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModalCenter"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="modal-body">
+            <iframe
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/B4Z3g72buI8?si=B4o9ZYrjWgjCvpNS"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main>
+      <div id="scroll-container">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-relative">
+          <div class="container">
+            <div class="header-logo-wrapper">
+              <a href="/" class="logo-brand">
+                <img
+                  src="assets/img/Marcel-Tech-Logo_02.png"
+                  class="logo-light"
+                  alt="logo"
+                />
+                <img
+                  src="assets/img/Marcel-Tech-Logo.png"
+                  class="logo-dark"
+                  alt="logo"
+                />
+              </a>
+            </div>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="work.html">Work</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+            <div class="header-right">
+              <a href="#" class="btn-main"
+                >Lets Talk
+                <img src="./assets/img/arrow-white.svg" alt="arrow-white"
+              /></a>
+            </div>
+          </div>
+        </nav>
+        <div class="main-content">
+          <div class="bottom-sections">
+            <section class="inner-hero">
+              <div class="container">
+                <div class="row inner-hero-row">
+                  <div class="col-md-6">
+                    <div class="inner-hero-left">
+                      <h1>Our Work</h1>
+                      <p>
+                        See how Marceltech has helped its clients achieve their
+                        vision of digital innovation
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="inner-hero-right">
+                      <div class="hero-video-wrapper">
+                        <video
+                          src="assets/img/pGZ7aqyVD45z794xTP95bGYflrH3gwHDO4nmL0xi.mp4"
+                          autoplay
+                          muted
+                          loop
+                        ></video>
+                        <div
+                          class="video-round-play"
+                          data-toggle="modal"
+                          data-target="#exampleModalCenter"
+                        >
+                          <img
+                            src="assets/img/play-white.png"
+                            alt="Play Button"
+                          />
+                        </div>
+                      </div>
+                      <p>watch our presentation</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="portfolio-wrapper">
+              <div class="container">
+                
+                <div class="portfolio-items"></div>
+              </div>
+            </section>
+            <section class="our-work">
+              <div class="container">
+              
+                <div class="our-work-items">
+                  <div class="row">
+                    <div class="col-lg-6 px-lg-0">
+                      <div class="work-item">
+                        <div class="wi-top">
+                          <a href="">
+                            <figure>
+                              <img src="assets/img/work/work1.jpg" alt="" />
+                            </figure>
+                          </a>
+                          <ul class="wi-category-tabs">
+                            <li><a href="">UX/UI Design</a></li>
+                            <li><a href="">Education</a></li>
+                          </ul>
+                        </div>
+                        <div class="wi-content">
+                          <a href="">
+                            <div class="wi-content-header">
+                              <h3>EducaciÓn</h3>
+                              <div class="wi-header-arrow">
+                                <img
+                                  src="assets/img/arrow-white-large.png"
+                                  alt=""
+                                />
+                                <img
+                                  src="assets/img/arrow-white-large.png"
+                                  alt=""
+                                />
+                              </div>
+                            </div>
+                          </a>
+                          <p>
+                            We digitized the processes of driver qualification,
+                            compliance, and document flow for transportation
+                            companies.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="work-item">
+                        <div class="wi-top">
+                          <a href="">
+                            <figure>
+                              <img src="assets/img/work/work3.jpg" alt="" />
+                            </figure>
+                          </a>
+                          <ul class="wi-category-tabs">
+                            <li><a href="">UX/UI Design</a></li>
+                            <li><a href="">Custom Software</a></li>
+                          </ul>
+                        </div>
+                        <div class="wi-content">
+                          <a href="">
+                            <div class="wi-content-header">
+                              <h3>Beautylicious</h3>
+                              <div class="wi-header-arrow">
+                                <img
+                                  src="assets/img/arrow-white-large.png"
+                                  alt=""
+                                />
+                                <img
+                                  src="assets/img/arrow-white-large.png"
+                                  alt=""
+                                />
+                              </div>
+                            </div>
+                          </a>
+                          <p>
+                            Beautylicious is your online oasis for all things
+                            beauty. This vibrant and welcoming website offers an
+                            extensive range of content covering the latest
+                            beauty trends, makeup tutorials, skincare routines,
+                            and product reviews from top brands to hidden gems.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 px-lg-0 wi-column-border">
+                      <div class="work-item-total">
+                        <h3>2100+</h3>
+                        <h4>Implemented projects in IT</h4>
+                      </div>
+                      <div class="work-item">
+                        <div class="wi-top">
+                          <a href="">
+                            <figure>
+                              <img src="assets/img/work/work2.jpg" alt="" />
+                            </figure>
+                          </a>
+                          <ul class="wi-category-tabs">
+                            <li><a href="">UX/UI Design</a></li>
+                            <li><a href="">Skin care</a></li>
+                          </ul>
+                        </div>
+                        <div class="wi-content">
+                          <a href="">
+                            <div class="wi-content-header">
+                              <h3>Ultima Realty</h3>
+                              <div class="wi-header-arrow">
+                                <img
+                                  src="assets/img/arrow-white-large.png"
+                                  alt=""
+                                />
+                                <img
+                                  src="assets/img/arrow-white-large.png"
+                                  alt=""
+                                />
+                              </div>
+                            </div>
+                          </a>
+                          <p>
+                            Ultima Realty is a premier online destination that
+                            revolutionizes the way you approach real estate.
+                            Specializing in connecting buyers, sellers, and
+                            renters with their dream properties
+                          </p>
+                        </div>
+                      </div>
+                      <div class="work-item">
+                        <div class="wi-top">
+                          <a href="">
+                            <figure>
+                              <img src="assets/img/work/work4.jpg" alt="" />
+                            </figure>
+                          </a>
+                          <ul class="wi-category-tabs">
+                            <li><a href="">UX/UI Design</a></li>
+                            <li><a href="">Custom Software</a></li>
+                          </ul>
+                        </div>
+                        <div class="wi-content">
+                          <a href="">
+                            <div class="wi-content-header">
+                              <h3>Platinum Express</h3>
+                              <div class="wi-header-arrow">
+                                <img
+                                  src="assets/img/arrow-white-large.png"
+                                  alt=""
+                                />
+                                <img
+                                  src="assets/img/arrow-white-large.png"
+                                  alt=""
+                                />
+                              </div>
+                            </div>
+                          </a>
+                          <p>
+                            We digitized the processes of driver qualification,
+                            compliance, and document flow for transportation
+                            companies.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="clients-grid">
+              <div class="container">
+                <div class="our-work-header clients-grid-header">
+                  <h2>Our clients</h2>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <div class="c-grid-item">
+                      <figure class="c-grid-item-image">
+                        <img src="assets/img/clients/loreal.png" alt="" />
+                      </figure>
+                      <h5>Healthcare</h5>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Pharetra velit
+                        id consectetur est sem facilisis in eleifend nec. Tempor
+                        quis amet diam odio neque etiam neque. Sit tellus elit
+                        pellentesque.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="c-grid-item">
+                      <figure class="c-grid-item-image">
+                        <img src="assets/img/clients/cartier.png" alt="" />
+                      </figure>
+                      <h5>Healthcare</h5>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Pharetra velit
+                        id consectetur est sem facilisis in eleifend nec. Tempor
+                        quis amet diam odio neque etiam neque. Sit tellus elit
+                        pellentesque.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="c-grid-item">
+                      <figure class="c-grid-item-image">
+                        <img src="assets/img/clients/ebay.png" alt="" />
+                      </figure>
+                      <h5>Healthcare</h5>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Pharetra velit
+                        id consectetur est sem facilisis in eleifend nec. Tempor
+                        quis amet diam odio neque etiam neque. Sit tellus elit
+                        pellentesque.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="c-grid-item">
+                      <figure class="c-grid-item-image">
+                        <img src="assets/img/clients/nivea.png" alt="" />
+                      </figure>
+                      <h5>Healthcare</h5>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Pharetra velit
+                        id consectetur est sem facilisis in eleifend nec. Tempor
+                        quis amet diam odio neque etiam neque. Sit tellus elit
+                        pellentesque.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="c-grid-item">
+                      <figure class="c-grid-item-image">
+                        <img src="assets/img/clients/philips.png" alt="" />
+                      </figure>
+                      <h5>Healthcare</h5>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Pharetra velit
+                        id consectetur est sem facilisis in eleifend nec. Tempor
+                        quis amet diam odio neque etiam neque. Sit tellus elit
+                        pellentesque.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="c-grid-item">
+                      <figure class="c-grid-item-image">
+                        <img src="assets/img/clients/pampers.png" alt="" />
+                      </figure>
+                      <h5>Healthcare</h5>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Pharetra velit
+                        id consectetur est sem facilisis in eleifend nec. Tempor
+                        quis amet diam odio neque etiam neque. Sit tellus elit
+                        pellentesque.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="c-grid-item">
+                      <figure class="c-grid-item-image">
+                        <img src="assets/img/clients/gillete.png" alt="" />
+                      </figure>
+                      <h5>Healthcare</h5>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur. Pharetra velit
+                        id consectetur est sem facilisis in eleifend nec. Tempor
+                        quis amet diam odio neque etiam neque. Sit tellus elit
+                        pellentesque.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="scrolled-text">
+              <div class="container">
+                <div class="text-scroll-wrapper">
+                  <h2>
+                    Since 1999 we have done 3500+ projects for 250+ clients ✺
+                    Ready to start the project with us?
+                  </h2>
+                  <div class="text-scroll">
+                    <h3>
+                      MARCELTECH enhances the performance of your business by
+                      taking it digital.
+                    </h3>
+                    <p>
+                      MarcelTech is a leading software development company with
+                      a proven track record of delivering innovative IT
+                      solutions for over 4 years. We strongly believe in the
+                      power of technology to transform businesses, improve
+                      processes, and drive growth.
+                    </p>
+                    <p>
+                      Our team leverages the latest tools and technologies to
+                      create a robust digital ecosystem that empowers our
+                      clients to reach their full potential.
+                    </p>
+                    <p>
+                      We have successfully served clients across various
+                      industries, including Logistics, Oil & Gas, Healthcare,
+                      Retail, Fintech, and more. Our commitment to delivering
+                      exceptional results has earned us a reputation as a
+                      trusted partner for top software companies. 
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="start-growing">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="sg-left">
+                      <div class="quote-box">
+                        <img
+                          src="assets/img/quotes-white.png"
+                          alt="Quotes White"
+                        />
+                        <h3>
+                          With over 4 years of established experience, our
+                          company excels in providing tailor-made IT solutions
+                          for medium-sized businesses and larger corporations.
+                          Our top priority is to align with your specific
+                          business objectives, and we are dedicated to
+                          delivering top-notch service and results for our
+                          valued clients.
+                        </h3>
+                      </div>
+
+                      <div class="intro">
+                        <div class="intro-content">
+                          <div class="intro-name">Danish Jinia</div>
+                          <div class="intro-position">СЕО MARCELTECH</div>
+                        </div>
+                        <div class="intro-img">
+                          <img
+                            src="assets/img/ceo-danish-2.png"
+                            alt="Intro Picture"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="st-form-wrapper">
+                      <h2 class="anim-stretchinup">
+                        Start Growing Your Business With Us
+                      </h2>
+                      <div class="st-form">
+                        <form>
+                          <div class="form-row">
+                            <div class="col">
+                              <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Full name *"
+                                required
+                              />
+                            </div>
+                            <div class="col">
+                              <input
+                                type="email"
+                                class="form-control"
+                                placeholder="Email *"
+                              />
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col">
+                              <input
+                                type="tel"
+                                class="form-control"
+                                placeholder="Phone Number"
+                              />
+                            </div>
+                            <div class="col">
+                              <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Company"
+                              />
+                            </div>
+                          </div>
+                          <div class="form-row">
+                            <div class="col">
+                              <textarea
+                                class="form-control"
+                                rows="2"
+                                placeholder="Message"
+                              ></textarea>
+                            </div>
+                          </div>
+                          <div class="form-row form-row-button">
+                            <div class="form-group form-check-group">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  value=""
+                                  id="invalidCheck3"
+                                  required
+                                />
+                                <label
+                                  class="form-check-label"
+                                  for="invalidCheck3"
+                                >
+                                  We will add your info to our CRM for
+                                  contacting you regarding your request. For
+                                  more info please consult our
+                                  <a href="">privacy policy</a> .
+                                </label>
+                              </div>
+                            </div>
+                            <button
+                              type="submit"
+                              href="#"
+                              class="btn-main btn-with-arrow invert"
+                            >
+                              <span class="text-btn">
+                                <span>SEND MESSAGE</span>
+                                <span>SEND MESSAGE</span>
+                              </span>
+                              <span class="arrow-btn">
+                                <img
+                                  class="arrow-btn-white"
+                                  src="assets/img/arrow-white.png"
+                                  alt=""
+                                />
+                                <img
+                                  class="arrow-btn-dark"
+                                  src="assets/img/arrow-black.png"
+                                  alt=""
+                                />
+                              </span>
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <footer class="footer-main">
+          <div class="container">
+            <div class="footer-top">
+              <div class="row">
+                <div class="col-lg-2">
+                  <ul class="footer-links">
+                    <li><a href="">About</a></li>
+                    <li><a href="">Work</a></li>
+                    <li><a href="">Services</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">Chat</a></li>
+                  </ul>
+                </div>
+                <div class="col-lg-4">
+                  <div class="get-in-touch-link">
+                    <a href="" class="btn-with-arrow"
+                      >Let’s Get In Touch
+                      <div class="arrow-btn-wrapper">
+                        <span class="arrow-btn">
+                          <img
+                            class="arrow-btn-white"
+                            src="assets/img/arrow-white-large.png"
+                            alt=""
+                          />
+                          <img
+                            class="arrow-btn-white"
+                            src="assets/img/arrow-white-large.png"
+                            alt=""
+                          />
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-5">
+                  <div class="social-links">
+                    <ul>
+                      <li>
+                        <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+                      </li>
+                      <li>
+                        <a href=""><i class="fa-brands fa-instagram"></i></a>
+                      </li>
+                      <li>
+                        <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+                      </li>
+                      <li>
+                        <a href=""><i class="fa-brands fa-twitter"></i></a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="footer-box">
+                        <h3>Milton, DELAWARE</h3>
+                        <p>
+                          124 Broadkill Rd #797 Milton, DE 19968-1008, Milton,
+                          DELAWARE, USA. Contact:
+                          <a href="tel:+1 (302) 336 7765">+1 (302) 336 7765</a>
+                        </p>
+                        <p>
+                          USA. Contact:
+                          <a href="tel:+1 (302) 336 7765">+1 (302) 336 7765</a>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="footer-box">
+                        <h3>Karachi, PAKISTAN</h3>
+                        <p>
+                          Plot D-98/2, Block 4 Clifton, Karachi, Karachi City,
+                          Sindh 75600, Pakistan
+                        </p>
+                        <p>
+                          Office:
+                          <a href="tel:+92 (21) 33487810">+92 (21) 33487810</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-1">
+                  <div class="go-to-top">
+                    Top
+                    <div class="goToTopArrow">
+                      <img src="assets/img/arrow-black.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-bottom">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="footer-reel">
+                      <a href="#" class="btn-main btn-with-arrow arrow-round">
+                        <div class="arrow-btn-wrapper">
+                          <span class="arrow-btn">
+                            <img
+                              class="arrow-btn-dark"
+                              src="assets/img/arrow-black.png"
+                              alt=""
+                            />
+                            <img
+                              class="arrow-btn-white"
+                              src="assets/img/arrow-white.png"
+                              alt=""
+                            />
+                          </span>
+                        </div>
+                        Show Reel
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-sm-5">
+                        <p class="copy-text">© 2024 MarcelTech</p>
+                      </div>
+                      <div class="col-sm-7">
+                        <ul class="privacy-links">
+                          <li><a href="">Sitemap</a></li>
+                          <li><a href="">Privacy Policy</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </main>
+  </body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+
+  <!-- GSAP -->
+  <script src="assets/js/gsap.min.js"></script>
+  <script src="assets/js/ScrollTrigger.min.js"></script>
+  <script src="assets/js/TweenMax.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+ 
+ 
+</html>
